@@ -85,7 +85,7 @@ def get_country_score(name):
         return score_Uruguay
 
 def main():
-    print( str(get_country_score(sys.argv[1])) + " - " + str(get_country_score(sys.argv[3])) )
+    print( str(get_country_score(sys.argv[1])) + " - " + str(get_country_score(sys.argv[2])) )
 
 if __name__ == "__main__":
     main()
