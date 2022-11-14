@@ -71,7 +71,7 @@ for f in *.py
 do
   echo "Processing $f"
   echo "$f" >> "$FILE"
-  python $f $FirstCountry - $SecoundCountry >> $FILE
+  python $f $FirstCountry $SecoundCountry >> $FILE
 done
 
 exit 0
