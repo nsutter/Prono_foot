@@ -70,8 +70,8 @@ fi
 for f in script_prono/*.py
 do
   echo "Processing $f"
-  echo "$f" >> "$FILE"
-  python $f $FirstCountry $SecoundCountry >> $FILE
+  echo "$f" >> "Results/$FILE"
+  python $f $FirstCountry $SecoundCountry >> "Results/$FILE"
 done
 
 exit 0
