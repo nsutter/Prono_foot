@@ -67,7 +67,7 @@ if test -f $FILE; then
   rm $FILE
 fi
 
-for f in *.py
+for f in script_prono/*.py
 do
   echo "Processing $f"
   echo "$f" >> "$FILE"
