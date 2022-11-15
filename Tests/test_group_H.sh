@@ -3,12 +3,12 @@ FILE="../script_prono/NSU_prono.py"
 
 for f in $FILE
 do
-  python $f Portugal Ghana
-  python $f Portugal Uruguay
-  python $f Portugal Coree_du_sud
-  python $f Ghana Uruguay
-  python $f Ghana Coree_du_sud
-  python $f Uruguay Coree_du_sud
+  python3 $f Portugal Ghana
+  python3 $f Portugal Uruguay
+  python3 $f Portugal Coree_du_sud
+  python3 $f Ghana Uruguay
+  python3 $f Ghana Coree_du_sud
+  python3 $f Uruguay Coree_du_sud
 done
 
 exit 0

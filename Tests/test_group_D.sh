@@ -3,12 +3,12 @@ FILE="../script_prono/NSU_prono.py"
 
 for f in $FILE
 do
-  python $f France Australie
-  python $f France Danemark
-  python $f France Tunisie
-  python $f Australie Danemark
-  python $f Australie Tunisie
-  python $f Danemark Tunisie
+  python3 $f France Australie
+  python3 $f France Danemark
+  python3 $f France Tunisie
+  python3 $f Australie Danemark
+  python3 $f Australie Tunisie
+  python3 $f Danemark Tunisie
 done
 
 exit 0
