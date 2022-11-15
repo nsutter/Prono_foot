@@ -61,7 +61,7 @@ fi
 #     RUN ALL SCRIPTS AND COLLECT DATA      #
 #############################################
 
-FILE=$FirstCountry-$SecoundCountry.txt
+FILE="Results/$FirstCountry-$SecoundCountry.txt"
 
 if test -f $FILE; then
   rm $FILE
@@ -70,8 +70,8 @@ fi
 for f in script_prono/*.py
 do
   echo "Processing $f"
-  echo "$f" >> "Results/$FILE"
-  python $f $FirstCountry $SecoundCountry >> "Results/$FILE"
+  echo "$f" >> $FILE
+  python $f $FirstCountry $SecoundCountry >> $FILE
 done
 
 exit 0
