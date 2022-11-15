@@ -1,91 +1,75 @@
 import sys
+import numpy as np
+import random
 
-score_Allemagne = 1
-score_Angleterre = 1
-score_Arabie_saoudite = 1
-score_Argentine = 1
-score_Belgique = 15
-score_Bresil = 6
-score_Cameroun = 6
-score_Canada = 6
-score_Croatie = 51
-score_Danemark = 31
-score_Equatar = 9
-score_Espagne = 9
-score_France = 7
-score_Ghana = 7
-score_Japon = 7
-score_Maroc = 7
-score_Pologne = 7
-score_Portugal = 15
-score_Coree = 15
-score_Iran = 15
-score_Pays_Bas = 15
-score_Qatar = 51
-score_Senegal = 81
-score_Serbie = 100
-score_Suisse = 150
-score_Tunisie = 150
-score_Uruguay = 151
+teams = ["Allemagne", "Angleterre", "Arabie_saoudite", "Argentine", "Australie", "Belgique", "Bresil", "Cameroun", "Canada", "Coree_du_sud", "Costa_rica", "Croatie", "Danemark", "Equateur", "Espagne", "Etats_unis", "France", "Ghana", "Iran", "Japon", "Maroc", "Mexique", "Pays_de_galles", "Pays_bas", "Pologne", "Portugal", "Qatar", "Senegal", "Serbie", "Suisse", "Tunisie", "Uruguay"]
+cote = [11, 9, 601, 6, 350, 15, 5, 251, 252, 251, 601, 41, 29, 151, 9, 101, 7, 251, 501, 251, 251, 100, 151, 15, 101, 15, 251, 81, 81, 70, 401, 41]
 
-def get_country_score(name):
-    if(name == "Allemagne"):
-        return score_Allemagne
-    elif(name == "Angleterre"):
-        return score_Angleterre
-    elif(name == "Arabie_saoudite"):
-        return score_Arabie_saoudite
-    elif(name == "Argentine"):
-        return score_Argentine
-    elif(name == "Belgique"):
-        return score_Belgique
-    elif(name == "Bresil"):
-        return score_Bresil
-    elif(name == "Cameroun"):
-        return score_Cameroun
-    elif(name == "Canada"):
-        return score_Canada
-    elif(name == "Croatie"):
-        return score_Croatie
-    elif(name == "Danemark"):
-        return score_Danemark
-    elif(name == "Equateur"):
-        return score_Equatar
-    elif(name == "Espagne"):
-        return score_Espagne
-    elif(name == "France"):
-        return score_France
-    elif(name == "Ghana"):
-        return score_Ghana
-    elif(name == "Japon"):
-        return score_Japon
-    elif(name == "Maroc"):
-        return score_Maroc
-    elif(name == "Pologne"):
-        return score_Pologne
-    elif(name == "Portugual"):
-        return score_Portugal
-    elif(name == "Coree"):
-        return score_Coree
-    elif(name == "Iran"):
-        return score_Iran
-    elif(name == "Pays_Bas"):
-        return score_Pays_Bas
-    elif(name == "Qatar"):
-        return score_Qatar
-    elif(name == "Senegal"):
-        return score_Senegal
-    elif(name == "Serbie"):
-        return score_Serbie
-    elif(name == "Suisse"):
-        return score_Suisse
-    elif(name == "Tunisie"):
-        return score_Tunisie
-    elif(name == "Uruguay"):
-        return score_Uruguay
+big_diff = 1.1
+small_diff = 0.5
+
+def avoid_equity(winning_team, score1, score2):
+    if( score1 == score2 and winning_team != 0 ):
+        if( win == 1 ):
+            if( score2 > 0 ):
+                score2 -= 1
+            else:
+                score1 += 1
+        else:
+            if( score1 > 0 ):
+                score1 -= 1
+            else:
+                score2 += 1
+
+    return score1, score2
+
+def compute_score(index_team_1, index_team_2):
+
+    cote_diff = cote[index_team_1] - cote[index_team_2]
+    mu_team1 = 1.32
+    mu_team2 = 1.32
+    sigma = 0.6
+
+    if(cote_diff < 0):
+        win = 1
+        if(cote_diff < -200):
+            mu_team1 += big_diff
+            mu_team2 -= big_diff
+        elif(cote_diff < -20):
+            mu_team1 += small_diff
+            mu_team2 -= small_diff
+        elif(cote[index_team_1] < 40):
+            mu_team2 -= 1
+            sigma = 0.4
+
+    elif(cote_diff > 0):
+        win = 2
+        if(cote_diff > 200):
+            mu_team2 += big_diff
+            mu_team1 -= big_diff
+        elif(cote_diff > 20):
+            mu_team2 += small_diff
+            mu_team1 -= small_diff
+        elif(cote[index_team_2] < 40):
+            mu_team1 -= 1
+            sigma = 0.4
+    else:
+        win = 0
+        mu_team1 = 2
+        mu_team2 = 2
+        sigma = 0.2
+
+    score1 = abs( round( random.gauss(mu_team1, sigma=sigma) ) )
+    score2 = abs( round( random.gauss(mu_team2, sigma=sigma) ) )
+
+    # score1, score2 = avoid_equity(win, score1, score2)
+
+    print( str(score1) + " - " + str(score2) )
 
 def main():
-    print( str(get_country_score(sys.argv[1])) + " - " + str(get_country_score(sys.argv[2])) )
+    team_1 = sys.argv[1]
+    team_2 = sys.argv[2]
+    compute_score(teams.index(team_1), teams.index(team_2))
 
 if __name__ == "__main__":
     main()
