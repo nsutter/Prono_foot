@@ -70,4 +70,4 @@ elif proba == 10:
     score_E1 = 0
     score_E2 = 0
     
-print( score_E1," - " , score_E2)
+print( str(score_E1) + " - " + str(score_E2) )
