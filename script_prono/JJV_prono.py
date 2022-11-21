@@ -5,11 +5,11 @@ import random
 teams = { "Qatar" : 4,
           "Equateur" : 5,
           "Senegal" : 6,
-          "Pays_Bas" : 7,
+          "Pays_bas" : 7,
           "Angleterre" : 8,
           "Iran" : 3,
-          "Etats_Unis" : 6,
-          "Pays_de_Galle" : 6,
+          "Etats_unis" : 6,
+          "Pays_de_galles" : 6,
           "Argentine" : 9,
           "Arabie_saoudite" : 2,
           "Mexique" : 5,
@@ -33,7 +33,7 @@ teams = { "Qatar" : 4,
           "Portugal" : 10,
           "Ghana" : 4,
           "Uruguay" : 7,
-          "Coree_du_Sud" :5 ,       
+          "Coree_du_sud" :5 ,       
         }
 eval_E1 = teams[sys.argv[1]]
 eval_E2 = teams[sys.argv[2]]
