@@ -1,0 +1,20 @@
+script_prono/BBQ_prono.py
+2 - 0
+script_prono/BIG_prono.py
+2 - 1
+script_prono/DVI_prono.py
+1 - 0
+script_prono/FMM_prono.py
+4 - 2
+script_prono/JJV_prono.py
+4 - 0
+script_prono/LDK_prono.py
+3 - 0
+script_prono/NSU_prono.py
+2 - 1
+script_prono/OUG_prono.py
+3 - 0
+script_prono/PIG_prono.py
+4 - 0
+script_prono/TFE_prono.py
+1 - 0
