@@ -4,3 +4,4 @@ Senegal-Pays_bas 0 - 2
 Etats_unis-Pays_de_galles 1 - 1
 Argentine-Arabie_saoudite 1 - 2
 Danemark-Tunisie 0 - 0
+Mexique-Pologne 0 - 0
