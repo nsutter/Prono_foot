@@ -1,3 +1,6 @@
+# Prono_foot #
+
+Ce dépôt est un dépôt de Paris sur la coupe du monde de foot 2022 entre plusieurs personnes. Les scores étant pariés par des scripts écrits par chacune des personnes. 
 
 ## Règles ##
 
