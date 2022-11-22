@@ -38,6 +38,7 @@ Le programme sera exécuté avec la commande suivante: `python <trigramme>_prono
 > * Croatie
 > * Danemark
 > * Equateur
+> * Etats_unis
 > * Espagne
 > * France
 > * Ghana
@@ -47,7 +48,8 @@ Le programme sera exécuté avec la commande suivante: `python <trigramme>_prono
 > * Portugal
 > * Coree
 > * Iran
-> * Pays_Bas
+> * Pays_bas
+> * Pays_de_galles
 > * Qatar
 > * Senegal
 > * Serbie
