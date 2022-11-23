@@ -1,5 +1,5 @@
 name: GitHub Score update
-run-name: ${{ github.actor }} is testing updating scores 🚀
+run-name: ${{ github.actor }} is updating scores 🚀
 on: [push]
 jobs:
   Compute-Score-Actions:
