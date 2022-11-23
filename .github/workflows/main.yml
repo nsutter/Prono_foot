@@ -5,7 +5,9 @@ jobs:
   Compute-Score-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
+      - run: |
+          cd ${{ github.workspace }}
+          ls
       - name: Compute new scores
         run: |
           cd ${{ github.workspace }}
