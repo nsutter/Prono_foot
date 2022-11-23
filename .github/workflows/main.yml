@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: GitHub Score update
+run-name: ${{ github.actor }} is testing updating scores 🚀
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -16,5 +16,8 @@ jobs:
         run: |
           ./compute_score.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: git commit -am "Update scores"
-      - run: git push
+      - run: |
+          git config --global user.name 'nsutter'
+          git config --global user.email 'suttercyril.sutternicolas@gmail.com'
+          git commit -am "Update scores"
+          git push
