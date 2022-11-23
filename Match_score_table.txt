@@ -5,3 +5,4 @@ Etats_unis-Pays_de_galles 1 - 1
 Argentine-Arabie_saoudite 1 - 2
 Danemark-Tunisie 0 - 0
 Mexique-Pologne 0 - 0
+France-Australie 4 - 1
