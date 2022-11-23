@@ -5,16 +5,13 @@ jobs:
   Compute-Score-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          cd ${{ github.workspace }}
-          ls
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       - name: Compute new scores
         run: |
-          cd ${{ github.workspace }}
-          ls ./
-          ls ${{ github.workspace }}
           ${{ github.workspace }}/compute_score.sh
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "This job's status is ${{ job.status }}."
       - run: |
           git config --global user.name 'nsutter'
           git config --global user.email 'suttercyril.sutternicolas@gmail.com'
