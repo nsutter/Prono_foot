@@ -9,11 +9,12 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - shell: bash
+      - name: Compute new score
+        shell: bash
         run: |
           ./compute_score.sh
-      - run: echo "This job's status is ${{ job.status }}."
-      - run: |
+      - name: Push new scores
+        run: |
           git config --global user.name 'nsutter'
           git config --global user.email 'suttercyril.sutternicolas@gmail.com'
           git commit -am "Update scores"
