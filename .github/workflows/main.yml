@@ -2,11 +2,10 @@ name: GitHub Score update
 run-name: ${{ github.actor }} is testing updating scores 🚀
 on: [push]
 jobs:
-
   Compute-Score-Actions:
-    uses: actions/checkout@v3
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
