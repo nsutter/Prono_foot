@@ -10,7 +10,7 @@ jobs:
           ls ${{ github.workspace }}
       - name: Compute new scores
         run: |
-          ${{ github.workspace }}/compute_score.sh
+          compute_score.sh
       - run: echo "This job's status is ${{ job.status }}."
       - run: |
           git config --global user.name 'nsutter'
