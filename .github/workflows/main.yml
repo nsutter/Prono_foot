@@ -13,7 +13,7 @@ jobs:
           cd ${{ github.workspace }}
           ls ./
           ls ${{ github.workspace }}
-          ./compute_score.sh
+          ${{ github.workspace }}/compute_score.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: |
           git config --global user.name 'nsutter'
