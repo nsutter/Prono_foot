@@ -2,6 +2,7 @@ name: GitHub Score update
 run-name: ${{ github.actor }} is testing updating scores 🚀
 on: [push]
 jobs:
+  
   Compute-Score-Actions:
     runs-on: ubuntu-latest
     steps:
@@ -9,8 +10,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Compute new scores
-        run: |
-          compute_score.sh
+        shell: |
+          ./compute_score.sh
       - run: echo "This job's status is ${{ job.status }}."
       - run: |
           git config --global user.name 'nsutter'
