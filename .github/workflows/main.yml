@@ -5,6 +5,7 @@ jobs:
   Compute-Score-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: ls
       - name: Compute new scores
         run: |
           ls
