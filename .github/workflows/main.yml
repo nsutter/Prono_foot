@@ -2,7 +2,7 @@ name: GitHub Score update
 run-name: ${{ github.actor }} is testing updating scores 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Compute-Score-Actions:
     runs-on: ubuntu-latest
     steps:
       - name: Compute new scores
