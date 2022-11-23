@@ -4,7 +4,7 @@
 #                VARIABLES                  #
 #############################################
 
-Countries=("Allemagne" "Angleterre" "Arabie_saoudite" "Argentine" "Australie" "Belgique" "Bresil" "Cameroun" "Canada" "Coree_du_sud" "Costa_rica" "Croatie" "Danemark" "Equateur" "Espagne" "Etats_unis" "France" "Ghana" "Iran" "Japon" "Maroc" "Mexique" "Pays_de_galles" "Pays_bas" "Pologne" "Portugal", "Qatar" "Senegal" "Serbie" "Suisse" "Tunisie" "Uruguay")
+Countries=("Allemagne" "Angleterre" "Arabie_saoudite" "Argentine" "Australie" "Belgique" "Bresil" "Cameroun" "Canada" "Coree_du_sud" "Costa_rica" "Croatie" "Danemark" "Equateur" "Espagne" "Etats_unis" "France" "Ghana" "Iran" "Japon" "Maroc" "Mexique" "Pays_de_galles" "Pays_bas" "Pologne" "Portugal" "Qatar" "Senegal" "Serbie" "Suisse" "Tunisie" "Uruguay")
 error=0
 
 #############################################
