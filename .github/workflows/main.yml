@@ -8,6 +8,7 @@ jobs:
       - run: ls
       - name: Compute new scores
         run: |
+          cd ${{ github.workspace }}
           ls
           ./compute_score.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
