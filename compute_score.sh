@@ -113,4 +113,7 @@ echo -e "${SCORE[7]} \t ${CORRECT_WINNER[7]} \t\t ${CORRECT_SCORE[7]} \t OUG" >>
 echo -e "${SCORE[8]} \t ${CORRECT_WINNER[8]} \t\t ${CORRECT_SCORE[8]} \t PIG" >> Point_table.txt
 echo -e "${SCORE[9]} \t ${CORRECT_WINNER[9]} \t\t ${CORRECT_SCORE[9]} \t TFE" >> Point_table.txt
   
-sort -k1,1 -n -r -t\t Point_table.txt
+sort -k1,1 -n -r -t\t Point_table.txt > Point_table_sorted.txt
+
+rm Point_table.txt
+mv Point_table_sorted.txt Point_table.txt
