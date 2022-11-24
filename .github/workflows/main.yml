@@ -1,0 +1,21 @@
+name: GitHub Score update
+run-name: ${{ github.actor }} is updating scores 🚀
+on: [push]
+jobs:
+  Compute-Score-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: Compute new score
+        shell: bash
+        run: |
+          ./compute_score.sh
+      - name: Push new scores
+        run: |
+          git config --global user.name 'nsutter'
+          git config --global user.email 'suttercyril.sutternicolas@gmail.com'
+          git commit -am "Update scores"
+          git push
