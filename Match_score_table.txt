@@ -11,3 +11,4 @@ Allemagne-Japon 1 - 2
 Espagne-Costa_rica 7 - 0
 Belgique-Canada 1 - 0
 Suisse-Cameroun 1 - 0
+Uruguay-Coree_du_sud 0 - 0
