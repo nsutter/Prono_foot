@@ -20,3 +20,4 @@ Pays_bas-Equateur 1 - 1
 Angleterre-Etats_unis 0 - 0
 Tunisie-Australie 0 - 1
 Pologne-Arabie_saoudite 2 - 0
+France-Danemark 2 - 1
