@@ -21,3 +21,4 @@ Angleterre-Etats_unis 0 - 0
 Tunisie-Australie 0 - 1
 Pologne-Arabie_saoudite 2 - 0
 France-Danemark 2 - 1
+Argentine-Mexique 2 - 0
