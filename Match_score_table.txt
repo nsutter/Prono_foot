@@ -18,3 +18,4 @@ Pays_de_galles-Iran 0 - 2
 Qatar-Senegal 1 - 3
 Pays_bas-Equateur 1 - 1
 Angleterre-Etats_unis 0 - 0
+Tunisie-Australie 0 - 1
