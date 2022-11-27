@@ -23,3 +23,4 @@ Pologne-Arabie_saoudite 2 - 0
 France-Danemark 2 - 1
 Argentine-Mexique 2 - 0
 Japon-Costa_rica 0 - 1
+Belgique-Maroc 0 - 2
