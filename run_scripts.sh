@@ -61,7 +61,7 @@ fi
 #     RUN ALL SCRIPTS AND COLLECT DATA      #
 #############################################
 
-FILE="Results/$FirstCountry-$SecoundCountry.txt"
+FILE="Prono/$FirstCountry-$SecoundCountry.txt"
 
 if test -f $FILE; then
   rm $FILE

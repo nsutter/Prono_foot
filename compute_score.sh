@@ -18,10 +18,10 @@ CORRECT_WINNER=(0 0 0 0 0 0 0 0 0 0)
 CORRECT_SCORE=(0 0 0 0 0 0 0 0 0 0)
 
 
-for file in Results/*.txt
+for file in Prono/*.txt
 do
   score_found=0
-  match=${file//Results\//}
+  match=${file//Prono\//}
   match=${match//.txt/}
 	
   ## FIND CORRECT SCORE	
