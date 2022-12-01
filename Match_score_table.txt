@@ -34,3 +34,4 @@ Equateur-Senegal 1 - 2
 Pays_bas-Qatar 2 - 0
 Iran-Etats_unis 0 - 1
 Pays_de_galles-Angleterre 0 - 3
+Tunisie-France 1 - 0
