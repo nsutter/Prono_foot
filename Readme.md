@@ -79,3 +79,17 @@ Il devra être formaté de la manière suivante: `<score pays1> - <score pays2>`
 
 **Seul le score final du match compte**. En cas de tirs au but le score avant la
  session de tirs au but sera pris.
+
+|                      | Points |
+| -------------------- | ------ |
+| Bad winner/score     |	0 |
+| Good winner (poule)  |	1 |
+| Good score (poule)   |	2 |
+| Good winner (8ème)   |	2 |
+| Good score (8ème)    |	4 |
+| Good winner (quart)  |	4 |
+| Good score (quart)   |	8 |
+| Good winner (demi)   |	8 |
+| Good score (demi)    |	16 |
+| Good winner (finale) |	16 |
+| Good score (finale)  |	32 |
