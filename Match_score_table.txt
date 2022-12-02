@@ -41,3 +41,4 @@ Arabie_saoudite-Mexique 1 - 2
 Croatie-Belgique 0 - 0
 Canada-Maroc 1 - 2
 Japon-Espagne 2 - 1
+Costa_rica-Allemagne 2 - 4
