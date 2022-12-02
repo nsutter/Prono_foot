@@ -4,11 +4,12 @@ Ce dépôt est un dépôt de Paris sur la coupe du monde de foot 2022 entre plus
 
 ## Contenu ##
 
-Dans le dossier results se trouve les pari de tous les script, un fichier par match. 
+Dans le dossier prono se trouve les paris de tous les script, un fichier par match. 
 Dans le dossier test de trouve des tests pour pouvoir lancer chaque poule sur un script, tous les tests peuvent être lancés avec run_all_tests.sh. 
 Enfin le dossier scripts contient l'ensemble des programmes pour prendre les paris, un programme par joueur. 
 
-Le script run_scripts.sh permet de lancer pour un match tous les scripts des joueurs.  
+Le script run_scripts.sh permet de lancer pour un match tous les scripts des joueurs.
+`./run_scripts.sh <pays1> <pays2>`
 
 ## Règles ##
 
