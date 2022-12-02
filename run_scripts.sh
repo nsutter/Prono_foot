@@ -10,7 +10,8 @@ error=0
 #############################################
 #           ASK AND CHECK COUNTRIES         #
 #############################################
-read -p "Enter first country: " FirstCountry
+#read -p "Enter first country: " FirstCountry
+FirstCountry=$1
 for Country in "${Countries[@]}"
 do
   if [ "$Country" = "$FirstCountry" ];
@@ -27,7 +28,8 @@ else
   error=0
 fi
 
-read -p "Enter second country: " SecoundCountry
+#read -p "Enter second country: " SecoundCountry
+SecoundCountry=$2
 for Country in "${Countries[@]}"
 do
   if [ "$Country" = "$SecoundCountry" ];
@@ -73,5 +75,8 @@ do
   echo "$f" >> $FILE
   python3 $f $FirstCountry $SecoundCountry >> $FILE
 done
+
+git add $FILE
+git commit -m "Added result $FILE"
 
 exit 0
