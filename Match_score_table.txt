@@ -34,3 +34,11 @@ Equateur-Senegal 1 - 2
 Pays_bas-Qatar 2 - 0
 Iran-Etats_unis 0 - 1
 Pays_de_galles-Angleterre 0 - 3
+Tunisie-France 1 - 0
+Australie-Danemark 1 - 0
+Pologne-Argentine 0 - 2
+Arabie_saoudite-Mexique 1 - 2
+Croatie-Belgique 0 - 0
+Canada-Maroc 1 - 2
+Japon-Espagne 2 - 1
+Costa_rica-Allemagne 2 - 4
