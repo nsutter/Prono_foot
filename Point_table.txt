@@ -7,5 +7,5 @@
 26 	 18 		 4 	 TFE
 25 	 19 		 3 	 BBQ
 24 	 20 		 2 	 FMM
-20 	 16 		 2 	 DVI
+21 	 17 		 2 	 DVI
 TOTAL 	 WINNER 	 SCORE 	 TRI
