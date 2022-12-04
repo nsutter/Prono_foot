@@ -2,6 +2,7 @@
 
 RESULT_FILE="Match_score_table.txt"
 
+#INDEX FOR EACH SCRIPT
 BIG=0
 BBQ=1
 DVI=2
@@ -13,6 +14,7 @@ OUG=7
 PIG=8
 TFE=9
 
+#TABLE WITH THE POINTS
 SCORE=(0 0 0 0 0 0 0 0 0 0)
 CORRECT_WINNER=(0 0 0 0 0 0 0 0 0 0)
 CORRECT_SCORE=(0 0 0 0 0 0 0 0 0 0)
@@ -33,15 +35,15 @@ do
   score1=${arrayline[1]};
   score2=${arrayline[3]};
 
-
   (( MATCH_COUNTER+=1 ))
-
+  #INCREASE POINT ON DIFFERENT PHASE
   if [ $MATCH_COUNTER -eq 49 ] || [ $MATCH_COUNTER -eq 57 ] || [ $MATCH_COUNTER -eq 61 ] || [ $MATCH_COUNTER -eq 63 ];
   then
     ((POINT_WINNER=$POINT_WINNER*2))
     ((POINT_SCORE=$POINT_SCORE*2))
   fi
 
+  #FIND THE WINNER
   if [ "$score1" -gt "$score2" ];
   then
     winner=1
@@ -59,6 +61,7 @@ do
     score1_prono=${arrayline[0]}
     score2_prono=${arrayline[2]}
 
+    #IF IT'S THE LINE WITH THE SCORE COMPUTE SCORE
     if [ ${arrayline[1]} ];
     then
       index_temp=${NAME}
@@ -91,6 +94,7 @@ do
           ((SCORE[$index]+=POINT_WINNER))
 	      fi
       fi
+    #IF IT'S NOT THE LINE WITH THE SCORE GET THE NAME
     else
 	    NAME=${line//\_prono.py/}
 	    NAME=${NAME//script\_prono\//}
@@ -98,6 +102,8 @@ do
   done < $PRONO_FILE
 done < $RESULT_FILE
 
+
+#DISPLAY ALL THE RESULTS
 echo -e "TOTAL \t WINNER \t SCORE \t TRI" > Point_table.txt
 echo -e "${SCORE[0]} \t ${CORRECT_WINNER[0]} \t\t ${CORRECT_SCORE[0]} \t BIG" >> Point_table.txt
 echo -e "${SCORE[1]} \t ${CORRECT_WINNER[1]} \t\t ${CORRECT_SCORE[1]} \t BBQ" >> Point_table.txt
@@ -110,6 +116,7 @@ echo -e "${SCORE[7]} \t ${CORRECT_WINNER[7]} \t\t ${CORRECT_SCORE[7]} \t OUG" >>
 echo -e "${SCORE[8]} \t ${CORRECT_WINNER[8]} \t\t ${CORRECT_SCORE[8]} \t PIG" >> Point_table.txt
 echo -e "${SCORE[9]} \t ${CORRECT_WINNER[9]} \t\t ${CORRECT_SCORE[9]} \t TFE" >> Point_table.txt
 
+#SORT THE RESULTS
 sort -k1,1 -n -r -t\t Point_table.txt > Point_table_sorted.txt
 
 rm Point_table.txt
