@@ -44,3 +44,4 @@ Japon-Espagne 2 - 1
 Costa_rica-Allemagne 2 - 4
 Coree_du_sud-Portugal 2 - 1
 Ghana-Uruguay 0 - 2
+Serbie-Suisse 2 - 3
