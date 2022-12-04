@@ -17,89 +17,86 @@ SCORE=(0 0 0 0 0 0 0 0 0 0)
 CORRECT_WINNER=(0 0 0 0 0 0 0 0 0 0)
 CORRECT_SCORE=(0 0 0 0 0 0 0 0 0 0)
 
+MACTH_COUNTER=0
+POINT_WINNER=1
+POINT_SCORE=2
 
-for file in Prono/*.txt
+## FOR EACH RESULT
+while read line;
 do
-  score_found=0
-  match=${file//Prono\//}
-  match=${match//.txt/}
-	
-  ## FIND CORRECT SCORE	
-  while read line; 
-  do 
-    arrayline=($line)
-    if [ "$match" = "${arrayline[0]}" ];
-    then
-      total_score=${line//"$match" /}
-      score1=${arrayline[1]}; 
-      score2=${arrayline[3]}; 
-      score_found=1
-      
-      if [ "$score1" -gt "$score2" ];
-      then
-        winner=1
-      elif [ "$score2" -gt "$score1" ];
-	  then
-		winner=2
-	  else
-	    winner=0
-	  fi
-    fi
-  done < $RESULT_FILE
-  
-  ## COMPUTE RESULT IF SCORE FOUND
-  if [ "$score_found" -eq 1 ];
+  arrayline=($line)
+  winner=0
+
+  match=${arrayline[0]};
+  PRONO_FILE="Prono/$match.txt"
+  total_score=${line//"$match" /}
+  score1=${arrayline[1]};
+  score2=${arrayline[3]};
+
+
+  (( MATCH_COUNTER+=1 ))
+
+  if [ $MATCH_COUNTER -eq 49 ] || [ $MATCH_COUNTER -eq 57 ] || [ $MATCH_COUNTER -eq 61 ] || [ $MATCH_COUNTER -eq 63 ];
   then
-    
-    while read line; 
-    do
-      arrayline=($line)
-      score1_prono=${arrayline[0]}
-      score2_prono=${arrayline[2]}
-      
-      if [ ${arrayline[1]} ];
+    ((POINT_WINNER=$POINT_WINNER*2))
+    ((POINT_SCORE=$POINT_SCORE*2))
+  fi
+
+  if [ "$score1" -gt "$score2" ];
+  then
+    winner=1
+  elif [ "$score2" -gt "$score1" ];
+  then
+    winner=2
+  else
+    winner=0
+  fi
+
+  #READ ALL PRONO
+  while read line;
+  do
+    arrayline=($line)
+    score1_prono=${arrayline[0]}
+    score2_prono=${arrayline[2]}
+
+    if [ ${arrayline[1]} ];
+    then
+      index_temp=${NAME}
+      index=${!index_temp}
+
+      if [ "$total_score" = "$line" ];
       then
-        index_temp=${NAME}
-        index=${!index_temp}
-      
-        if [ "$total_score" = "$line" ];
-        then
-			((CORRECT_SCORE[$index]+=1))
-	    fi
-	    
+	    	((CORRECT_SCORE[$index]+=1))
+        ((SCORE[$index]+=POINT_SCORE))
+      fi
+
 	    if [ "$winner" -eq 1 ];
 	    then
 	       if [ "$score1_prono" -gt "$score2_prono" ];
 	       then
 	         ((CORRECT_WINNER[$index]+=1))
+           ((SCORE[$index]+=POINT_WINNER))
 	       fi
 	    elif [ "$winner" -eq 2 ];
 	    then
 	      if [ "$score1_prono" -lt "$score2_prono" ];
 	      then
 	        ((CORRECT_WINNER[$index]+=1))
+          ((SCORE[$index]+=POINT_WINNER))
 	      fi
 	    else
 	      if [ "$score1_prono" -eq "$score2_prono" ];
 	      then
 	        ((CORRECT_WINNER[$index]+=1))
+          ((SCORE[$index]+=POINT_WINNER))
 	      fi
-	    fi
-      else
+      fi
+    else
 	    NAME=${line//\_prono.py/}
 	    NAME=${NAME//script\_prono\//}
-      fi
-    done < $file
-  fi
-done
-
-j=0
-while [ "$j" -lt 10 ]
-do
-  (( SCORE[$j] =CORRECT_WINNER[$j] * 1 ))
-  (( SCORE[$j]+=CORRECT_SCORE[$j] * 2 ))
-  (( j+=1 ))
-done
+    fi
+  done < $PRONO_FILE
+done < $RESULT_FILE
 
 echo -e "TOTAL \t WINNER \t SCORE \t TRI" > Point_table.txt
 echo -e "${SCORE[0]} \t ${CORRECT_WINNER[0]} \t\t ${CORRECT_SCORE[0]} \t BIG" >> Point_table.txt
@@ -112,7 +109,7 @@ echo -e "${SCORE[6]} \t ${CORRECT_WINNER[6]} \t\t ${CORRECT_SCORE[6]} \t NSU" >>
 echo -e "${SCORE[7]} \t ${CORRECT_WINNER[7]} \t\t ${CORRECT_SCORE[7]} \t OUG" >> Point_table.txt
 echo -e "${SCORE[8]} \t ${CORRECT_WINNER[8]} \t\t ${CORRECT_SCORE[8]} \t PIG" >> Point_table.txt
 echo -e "${SCORE[9]} \t ${CORRECT_WINNER[9]} \t\t ${CORRECT_SCORE[9]} \t TFE" >> Point_table.txt
-  
+
 sort -k1,1 -n -r -t\t Point_table.txt > Point_table_sorted.txt
 
 rm Point_table.txt
