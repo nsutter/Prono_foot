@@ -31,7 +31,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run scripts to compute prono for a match
-      run: ./run_scripts ${{ github.event.inputs.country1 }} ${{ github.event.inputs.country2 }}
+      run: ./run_scripts.sh ${{ github.event.inputs.country1 }} ${{ github.event.inputs.country2 }}
     - name: Push new prono
       run: |
         git config --global user.name 'nsutter'
