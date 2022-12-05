@@ -47,3 +47,4 @@ Ghana-Uruguay 0 - 2
 Serbie-Suisse 2 - 3
 Cameroun-Bresil 1 - 0
 Pays_bas-Etats_unis 3 - 1
+Argentine-Australie 2 - 1
