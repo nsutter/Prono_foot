@@ -50,3 +50,4 @@ Pays_bas-Etats_unis 3 - 1
 Argentine-Australie 2 - 1
 France-Pologne 3 - 1
 Angleterre-Senegal 3 - 0
+Croatie-Japon 1 - 1
