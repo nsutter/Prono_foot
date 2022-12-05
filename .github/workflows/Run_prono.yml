@@ -8,13 +8,13 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      country2:
+      country1:
         description: 'First country'
         # Default value if no value is explicitly provided
         default: ''
         # Input has to be provided for the workflow to run
         required: true
-      country1:
+      country2:
         description: 'Second country'
         # Default value if no value is explicitly provided
         default: ''
