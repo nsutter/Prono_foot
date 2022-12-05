@@ -29,5 +29,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Send greeting
-      run: echo "./run_scripts ${{ github.event.inputs.country1 }} ${{ github.event.inputs.country2 }}"
+    - uses: actions/checkout@v3
+    - name: Run scripts to compute prono for a match
+      run: ./run_scripts ${{ github.event.inputs.country1 }} ${{ github.event.inputs.country2 }}
+    - name: Push new prono
+      run: |
+        git config --global user.name 'nsutter'
+        git config --global user.email 'suttercyril.sutternicolas@gmail.com'
+        git push
