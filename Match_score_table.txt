@@ -52,3 +52,4 @@ France-Pologne 3 - 1
 Angleterre-Senegal 3 - 0
 Croatie-Japon 1 - 1
 Bresil-Coree_du_sud 4 - 1
+Maroc-Espagne 0 - 0
