@@ -55,3 +55,4 @@ Bresil-Coree_du_sud 4 - 1
 Maroc-Espagne 0 - 0
 Portugal-Suisse 6 - 1
 Croatie-Bresil 1 - 1
+Pays_bas-Argentine 2 - 2
