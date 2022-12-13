@@ -58,3 +58,4 @@ Croatie-Bresil 1 - 1
 Pays_bas-Argentine 2 - 2
 Maroc-Portugal 1 - 0
 Angleterre-France 1 - 2
+Argentine-Croatie 3 - 0
