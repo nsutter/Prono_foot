@@ -61,3 +61,4 @@ Angleterre-France 1 - 2
 Argentine-Croatie 3 - 0
 France-Maroc 2 - 0
 Croatie-Maroc 2 - 1
+Argentine-France 3 - 3
